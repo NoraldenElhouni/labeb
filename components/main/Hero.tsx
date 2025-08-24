@@ -62,7 +62,7 @@ function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.25 }}
-            className="mt-2 flex flex-col sm:flex-row items-center gap-3"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12 w-full"
           >
             <Button
               size="lg"
@@ -94,38 +94,106 @@ function Hero() {
               <PlayCircle className="mr-2 h-5 w-5" />
               Our services
             </Button>
+
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() =>
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="px-8 py-6 text-base border-white/20 bg-background/30 backdrop-blur
+                         hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2
+                         focus-visible:ring-offset-2 focus-visible:ring-violet-500"
+            >
+              <PlayCircle className="mr-2 h-5 w-5" />
+              Our team
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() =>
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="px-8 py-6 text-base border-white/20 bg-background/30 backdrop-blur
+                         hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2
+                         focus-visible:ring-offset-2 focus-visible:ring-violet-500"
+            >
+              <PlayCircle className="mr-2 h-5 w-5" />
+              Our projects
+            </Button>
           </motion.div>
 
-          {/* Partners */}
+          {/* CTA buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-8 text-sm text-muted-foreground"
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="grid grid-cols-2 sm:grid-cols-4 gap-4 justify-center mb-12 w-full"
           >
-            Supported by
-          </motion.div>
+            <Button
+              size="lg"
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="group relative px-8 py-6 text-base shadow-lg shadow-blue-500/10
+                         bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500
+                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+            >
+              <span className="mr-2">Get started</span>
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+            </Button>
 
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
-            className="flex flex-wrap items-center justify-center gap-6 opacity-70"
-          >
-            {[
-              "Innovation Garden",
-              "Tadauowl",
-              "WASATA",
-              "ATOM",
-              "IFC",
-              "EU",
-              "SUPER NOVA",
-              "SPARK",
-            ].map((partner) => (
-              <div key={partner} className="text-xs sm:text-sm font-semibold">
-                {partner}
-              </div>
-            ))}
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() =>
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="px-8 py-6 text-base border-white/20 bg-background/30 backdrop-blur
+                         hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2
+                         focus-visible:ring-offset-2 focus-visible:ring-violet-500"
+            >
+              <PlayCircle className="mr-2 h-5 w-5" />
+              Our services
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() =>
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="px-8 py-6 text-base border-white/20 bg-background/30 backdrop-blur
+                         hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2
+                         focus-visible:ring-offset-2 focus-visible:ring-violet-500"
+            >
+              <PlayCircle className="mr-2 h-5 w-5" />
+              Our team
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() =>
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="px-8 py-6 text-base border-white/20 bg-background/30 backdrop-blur
+                         hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2
+                         focus-visible:ring-offset-2 focus-visible:ring-violet-500"
+            >
+              <PlayCircle className="mr-2 h-5 w-5" />
+              Our projects
+            </Button>
           </motion.div>
         </div>
       </div>
