@@ -1,4 +1,3 @@
-import { ThemeToggle } from "@/components/buttons/ThemeToggle";
 import Hero from "@/components/main/Hero";
 import Process from "@/components/main/Process";
 import Services from "@/components/main/Services";

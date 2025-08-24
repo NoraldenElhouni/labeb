@@ -61,7 +61,7 @@ function Contact() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Get in Touch</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to transform your business with AI? Let's discuss your
+            Ready to transform your business with AI? Let&apos;s discuss your
             project.
           </p>
         </motion.div>
@@ -107,7 +107,7 @@ function Contact() {
               <CardHeader>
                 <CardTitle className="text-2xl">Send us a Message</CardTitle>
                 <CardDescription>
-                  We'll get back to you within 24 hours
+                  We&apos;ll get back to you within 24 hours
                 </CardDescription>
               </CardHeader>
               <CardContent>

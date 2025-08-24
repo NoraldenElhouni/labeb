@@ -42,7 +42,7 @@ function Testimonials() {
             What Our Clients Say
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Don't just take our word for it
+            Don&apos;t just take our word for it
           </p>
         </motion.div>
 
@@ -66,7 +66,7 @@ function Testimonials() {
                     ))}
                   </div>
                   <blockquote className="text-lg mb-6 leading-relaxed">
-                    "{testimonial.quote}"
+                    &quot;{testimonial.quote}&quot;
                   </blockquote>
                   <div>
                     <div className="font-semibold">{testimonial.name}</div>
