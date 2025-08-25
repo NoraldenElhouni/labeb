@@ -1,22 +1,22 @@
 "use client";
-import { Rocket, Shield, TrendingUp } from "lucide-react";
+import { BookOpen, Rocket, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
 function Solutions() {
   const solutions = [
     {
       icon: Rocket,
-      title: "Faster launches",
+      title: "Reliability",
       description: "Template libraries + battle-tested patterns.",
     },
     {
       icon: Shield,
-      title: "Lower risk",
+      title: "Efficiency",
       description: "Quality gates, testing, SLOs.",
     },
     {
-      icon: TrendingUp,
-      title: "Scale securely",
+      icon: BookOpen,
+      title: "knowledge",
       description: "Least-privilege, secrets, compliance hints.",
     },
   ];

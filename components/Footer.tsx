@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { Button } from "./ui/button";
 import { Twitter, Github, Linkedin } from "lucide-react";
 
@@ -47,7 +46,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
@@ -75,7 +74,7 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm text-muted-foreground">

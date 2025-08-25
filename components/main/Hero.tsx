@@ -2,13 +2,13 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "../ui/button";
 import { ArrowRight, PlayCircle } from "lucide-react";
-import LogoOrbit from "../animation/LogoOrbit";
-import { useTranslations } from "next-intl";
+import LogoCloud from "../animation/Logocloud";
+import { Particles } from "../magicui/particles";
 
 function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
-  const t = useTranslations("home");
+  // const t = useTranslations("home");
 
   return (
     <section
@@ -16,6 +16,13 @@ function Hero() {
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
       aria-labelledby="hero-title"
     >
+      <Particles
+        className="absolute inset-0"
+        quantity={50}
+        ease={80}
+        color="#0ea5e9"
+        refresh={false}
+      />
       {/* subtle gradient wash */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-violet-500/5 to-transparent" />
       {/* floating glows with parallax */}
@@ -30,7 +37,7 @@ function Hero() {
       <div className="relative z-10 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center gap-6">
           {/* Logo + orbit */}
-          <LogoOrbit />
+          <LogoCloud />
 
           {/* Heading */}
           <motion.h1
@@ -44,7 +51,7 @@ function Hero() {
             <span className="bg-gradient-to-r from-sky-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
               AI
             </span>{" "}
-            solution {t("description")}
+            solution
           </motion.h1>
 
           {/* Description */}
@@ -58,76 +65,6 @@ function Hero() {
             secure and efficient digital transformation while ensuring data
             privacy protection.
           </motion.p>
-
-          {/* CTA buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12 w-full"
-          >
-            <Button
-              size="lg"
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="group relative px-8 py-6 text-base shadow-lg shadow-blue-500/10
-                         bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500
-                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-            >
-              <span className="mr-2">Get started</span>
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
-            </Button>
-
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() =>
-                document
-                  .getElementById("services")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="px-8 py-6 text-base border-white/20 bg-background/30 backdrop-blur
-                         hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2
-                         focus-visible:ring-offset-2 focus-visible:ring-violet-500"
-            >
-              <PlayCircle className="mr-2 h-5 w-5" />
-              Our services
-            </Button>
-
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() =>
-                document
-                  .getElementById("services")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="px-8 py-6 text-base border-white/20 bg-background/30 backdrop-blur
-                         hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2
-                         focus-visible:ring-offset-2 focus-visible:ring-violet-500"
-            >
-              <PlayCircle className="mr-2 h-5 w-5" />
-              Our team
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() =>
-                document
-                  .getElementById("services")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="px-8 py-6 text-base border-white/20 bg-background/30 backdrop-blur
-                         hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2
-                         focus-visible:ring-offset-2 focus-visible:ring-violet-500"
-            >
-              <PlayCircle className="mr-2 h-5 w-5" />
-              Our projects
-            </Button>
-          </motion.div>
 
           {/* CTA buttons */}
           <motion.div
@@ -171,7 +108,7 @@ function Hero() {
               variant="outline"
               onClick={() =>
                 document
-                  .getElementById("services")
+                  .getElementById("team")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
               className="px-8 py-6 text-base border-white/20 bg-background/30 backdrop-blur

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Home, Settings, Search } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ThemeToggle } from "./buttons/ThemeToggle";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 const SCROLL_COLLAPSE_Y = 80;
 
@@ -96,6 +97,9 @@ const Navbar = () => {
                 {/* Theme toggle (its own button; no nesting issues) */}
                 <div className="h-12 w-12">
                   <ThemeToggle />
+                </div>
+                <div className="h-12 w-12">
+                  <LocaleSwitcher />
                 </div>
               </div>
             </div>

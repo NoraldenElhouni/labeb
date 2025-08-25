@@ -7,6 +7,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import Navbar from "@/components/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -72,14 +73,14 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
   params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: { locale: string };
-}>) {
+}: LayoutProps<"/[locale]">) {
+  // ✅ params is a Promise in async layouts
   const { locale } = await params;
+
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
   const isRTL = locale === "ar";
   const messages = await getMessages({ locale });
 
@@ -95,7 +96,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {/* <Navbar /> */}
+            <Navbar />
             {children}
             <Footer />
           </ThemeProvider>

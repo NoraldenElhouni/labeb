@@ -46,7 +46,7 @@ function Achievements() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Achievements We're Proud Of
+            Achievements We&apos;re Proud Of
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Recognition and certifications that validate our commitment to
@@ -66,6 +66,7 @@ function Achievements() {
               <Card className="h-full bg-card/50 backdrop-blur-sm border-white/10 hover:bg-card/80 transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="mb-4">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={achievement.image || "/placeholder.svg"}
                       alt={achievement.title}

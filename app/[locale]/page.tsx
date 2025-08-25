@@ -1,20 +1,22 @@
+import AboutUs from "@/components/main/aboutUs";
+import Achievements from "@/components/main/Achievements";
 import Hero from "@/components/main/Hero";
-import Process from "@/components/main/Process";
 import Services from "@/components/main/Services";
 import Solutions from "@/components/main/Solutions";
-import TechStack from "@/components/main/TechStack";
-import Testimonials from "@/components/main/Testimonials";
+import SuccessPartners from "@/components/main/SuccessPartners";
+import Team from "@/components/main/team";
 import React from "react";
 
 const HomePage = () => {
   return (
     <div>
       <Hero />
+      <AboutUs />
       <Services />
       <Solutions />
-      <Process />
-      <TechStack />
-      <Testimonials />
+      <Team />
+      <Achievements />
+      <SuccessPartners />
     </div>
   );
 };
