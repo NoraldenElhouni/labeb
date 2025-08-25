@@ -3,10 +3,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "../ui/button";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import LogoOrbit from "../animation/LogoOrbit";
+import { useTranslations } from "next-intl";
 
 function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
+  const t = useTranslations("home");
 
   return (
     <section
@@ -42,7 +44,7 @@ function Hero() {
             <span className="bg-gradient-to-r from-sky-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
               AI
             </span>{" "}
-            solution
+            solution {t("description")}
           </motion.h1>
 
           {/* Description */}
