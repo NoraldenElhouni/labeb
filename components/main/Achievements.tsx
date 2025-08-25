@@ -10,28 +10,28 @@ function Achievements() {
       description:
         "Information Security Management System certification ensuring data protection standards.",
       year: "2024",
-      image: "/iso-27001-certificate-document.png",
+      image: "/Certification.png",
     },
     {
       title: "AI Ethics Compliance",
       description:
         "Certified for ethical AI development and deployment practices.",
       year: "2024",
-      image: "/ai-ethics-certification-document.png",
+      image: "/Certification.png",
     },
     {
       title: "Digital Transformation Excellence",
       description:
         "Recognition for outstanding digital transformation consulting services.",
       year: "2023",
-      image: "/digital-transformation-award-certificate.png",
+      image: "/Certification.png",
     },
     {
       title: "Innovation Award",
       description:
         "Awarded for innovative satellite monitoring solutions in the oil & gas sector.",
       year: "2023",
-      image: "/innovation-award-certificate.png",
+      image: "/Certification.png",
     },
   ];
 

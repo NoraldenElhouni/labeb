@@ -1,5 +1,6 @@
 import AboutUs from "@/components/main/aboutUs";
 import Achievements from "@/components/main/Achievements";
+import Gallery from "@/components/main/Gallery";
 import Hero from "@/components/main/Hero";
 import Services from "@/components/main/Services";
 import Solutions from "@/components/main/Solutions";
@@ -15,6 +16,7 @@ const HomePage = () => {
       <Services />
       <Solutions />
       <Team />
+      <Gallery />
       <Achievements />
       <SuccessPartners />
     </div>

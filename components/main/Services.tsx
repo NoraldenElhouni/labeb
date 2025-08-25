@@ -1,55 +1,54 @@
 "use client";
-import {
-  BarChart,
-  Brain,
-  GraduationCap,
-  Satellite,
-  Shield,
-  Users2 as Users,
-} from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "@/components/ui/card";
 
 function Services() {
   const services = [
     {
-      icon: Brain,
+      image: "/services/ai-brain-neural-network-technology.png",
+      alt: "AI Solutions Development",
       title: "AI Solutions Development",
       description:
         "Smart solutions based on artificial intelligence technologies tailored to various sectors.",
     },
     {
-      icon: Satellite,
+      image: "/services/satellite-monitoring-oil-pipeline-detection.png",
+      alt: "Satellite Monitoring Systems",
       title: "Satellite Monitoring Systems",
       description:
         "Satellite-based monitoring system for leak detection, specifically designed for oil companies.",
     },
     {
-      icon: GraduationCap,
+      image: "/services/ai-training-workshop-education-technology.png",
+      alt: "AI Training Programs",
       title: "AI Training Programs",
       description:
         "Training programs and workshops on safe use of AI and digital transformation tools ensuring data privacy.",
     },
     {
-      icon: Users,
+      image: "/services/technical-consulting-team-collaboration.png",
+      alt: "Technical Consulting",
       title: "Technical Consulting",
       description:
         "Technical consulting services to help organizations adopt AI strategies and integrate them into operations.",
     },
     {
-      icon: BarChart,
-      title: "Intelligent Systems",
+      image: "/services/web3.png",
+      alt: "Web3 Services",
+      title: "Web3 Services",
       description:
-        "Designing intelligent systems to improve productivity, data analysis, and decision-making support.",
+        "Innovative solutions leveraging blockchain technology for decentralized applications and services.",
     },
     {
-      icon: Shield,
+      image: "/services/management-consulting-corporate-governance.png",
+      alt: "Management Consulting",
       title: "Management Consulting",
       description:
         "Specialized management consulting in corporate governance to enhance performance and transparency.",
@@ -72,7 +71,7 @@ function Services() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -81,13 +80,23 @@ function Services() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full bg-card/50 backdrop-blur-sm border-white/10 hover:bg-card/80 transition-all duration-300">
-                <CardHeader>
-                  <service.icon className="h-12 w-12 text-blue-400 mb-4" />
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
+              <Card className="pt-0 h-full bg-card/50 backdrop-blur-sm border-white/10 hover:bg-card/80 transition-all duration-300 overflow-hidden">
+                <div className="relative w-full h-48 sm:h-52">
+                  <Image
+                    src={service.image || "/placeholder.svg"}
+                    alt={service.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+                <CardHeader className="px-6 pt-6 pb-2">
+                  <CardTitle className="text-lg sm:text-xl leading-tight">
+                    {service.title}
+                  </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed">
+                <CardContent className="px-6 pb-6">
+                  <CardDescription className="text-sm sm:text-base leading-relaxed">
                     {service.description}
                   </CardDescription>
                 </CardContent>
