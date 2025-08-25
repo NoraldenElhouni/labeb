@@ -12,42 +12,42 @@ import {
 function Services() {
   const services = [
     {
-      image: "/services/ai-brain-neural-network-technology.png",
+      image: "/services/ai-brain-neural-network-technology.jpg",
       alt: "AI Solutions Development",
       title: "AI Solutions Development",
       description:
         "Smart solutions based on artificial intelligence technologies tailored to various sectors.",
     },
     {
-      image: "/services/satellite-monitoring-oil-pipeline-detection.png",
+      image: "/services/satellite-monitoring-oil-pipeline-detection.jpg",
       alt: "Satellite Monitoring Systems",
       title: "Satellite Monitoring Systems",
       description:
         "Satellite-based monitoring system for leak detection, specifically designed for oil companies.",
     },
     {
-      image: "/services/ai-training-workshop-education-technology.png",
+      image: "/services/ai-training-workshop-education-technology.jpg",
       alt: "AI Training Programs",
       title: "AI Training Programs",
       description:
         "Training programs and workshops on safe use of AI and digital transformation tools ensuring data privacy.",
     },
     {
-      image: "/services/technical-consulting-team-collaboration.png",
+      image: "/services/technical-consulting-team-collaboration.jpg",
       alt: "Technical Consulting",
       title: "Technical Consulting",
       description:
         "Technical consulting services to help organizations adopt AI strategies and integrate them into operations.",
     },
     {
-      image: "/services/web3.png",
+      image: "/services/web3.jpg",
       alt: "Web3 Services",
       title: "Web3 Services",
       description:
         "Innovative solutions leveraging blockchain technology for decentralized applications and services.",
     },
     {
-      image: "/services/management-consulting-corporate-governance.png",
+      image: "/services/management-consulting-corporate-governance.jpg",
       alt: "Management Consulting",
       title: "Management Consulting",
       description:
