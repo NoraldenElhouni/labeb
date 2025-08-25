@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import LogoCloud from "../animation/Logocloud";
 import { Particles } from "../magicui/particles";
+import LogoIconCloud from "../animation/LogoIconCloud";
 
 function Hero() {
   const { scrollY } = useScroll();
@@ -38,6 +39,7 @@ function Hero() {
         <div className="flex flex-col items-center text-center gap-6">
           {/* Logo + orbit */}
           <LogoCloud />
+          <LogoIconCloud />
 
           {/* Heading */}
           <motion.h1
