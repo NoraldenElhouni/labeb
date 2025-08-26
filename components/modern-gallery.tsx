@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowLeft, Expand } from "lucide-react";
+import { ArrowLeft, Expand } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Lightbox } from "@/components/ui/lightbox";
 import Link from "next/link";

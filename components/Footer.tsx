@@ -23,7 +23,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <Button asChild>
-                <Link href="mailto:yourname@example.com">
+                <Link href="mailto:assel@labebai.com">
                   <Mail className="h-4 w-4" />
                 </Link>
               </Button>
