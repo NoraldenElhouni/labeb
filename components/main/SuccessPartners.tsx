@@ -12,17 +12,22 @@ function SuccessPartners() {
 
   const partners: Partner[] = [
     { name: "Innovation Garden", logo: "/partners/innovation-garden.svg" },
-    { name: "Tadauowl", logo: "/partners/tadauowl.svg" },
-    { name: "WASATA", logo: "/partners/wasata.svg" },
-    { name: "SME", logo: "/partners/sme.svg" },
-    { name: "ATOM", logo: "/partners/atom.svg" },
-    { name: "IFC", logo: "/partners/ifc.svg" },
-    { name: "European Union", logo: "/partners/eu.svg" },
-    { name: "SUPER NOVA", logo: "/partners/super-nova.svg" },
-    { name: "WASATA", logo: "/partners/wasatam.svg" },
-    { name: "SPARK", logo: "/partners/spark.svg" },
     { name: "UNDP", logo: "/partners/undp.svg" },
+    { name: "European Union", logo: "/partners/eu.svg" },
+    { name: "Tadauowl", logo: "/partners/tadauowl.svg" },
+    { name: "IFC", logo: "/partners/ifc.svg" },
+    { name: "SUPER NOVA", logo: "/partners/super-nova.svg" },
+    { name: "SPARK", logo: "/partners/spark.svg" },
+    { name: "SME", logo: "/partners/sme.svg" },
+    { name: "WASATA", logo: "/partners/wasata.svg" },
+    { name: "ATOM", logo: "/partners/atom.svg" },
+    { name: "WASATA", logo: "/partners/wasatam.svg" },
   ];
+
+  // Calculate the width for seamless animation
+  // Each item: 200px (min-width) + 64px (space-x-16 gap)
+  const itemWidth = 200 + 64; // 264px per item
+  const totalWidth = partners.length * itemWidth;
 
   // Duplicate for seamless loop
   const marqueeItems = [...partners, ...partners];
@@ -30,10 +35,7 @@ function SuccessPartners() {
   return (
     <section id="partners" className="py-24 bg-muted/30">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          className="text-center mb-16"
-          // Animate header in view
-        >
+        <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -57,10 +59,10 @@ function SuccessPartners() {
         <div className="relative overflow-hidden">
           <motion.div
             aria-label="partners-marquee"
-            animate={{ x: [0, -100 * partners.length] }}
+            animate={{ x: [0, -totalWidth] }}
             transition={{
               x: {
-                repeat: Number.POSITIVE_INFINITY,
+                repeat: Infinity,
                 repeatType: "loop",
                 duration: 30,
                 ease: "linear",
@@ -71,7 +73,7 @@ function SuccessPartners() {
             {marqueeItems.map((partner, index) => (
               <div
                 key={`${partner.name}-${index}`}
-                className="flex-shrink-0 bg-card/30 backdrop-blur-sm border border-white/10 rounded-lg px-8 py-4 min-w-[200px] flex items-center justify-center"
+                className="flex-shrink-0 bg-card/30 backdrop-blur-sm rounded-lg px-8 py-4 min-w-[200px] flex items-center justify-center"
                 title={partner.name}
               >
                 {partner.logo ? (
