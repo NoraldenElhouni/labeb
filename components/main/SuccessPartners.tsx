@@ -22,6 +22,7 @@ function SuccessPartners() {
     { name: "WASATA", logo: "/partners/wasata.svg" },
     { name: "ATOM", logo: "/partners/atom.svg" },
     { name: "WASATA", logo: "/partners/wasatam.svg" },
+    { name: "One day cloud", logo: "/partners/one-day-cloud.svg" },
   ];
 
   // Calculate the width for seamless animation
