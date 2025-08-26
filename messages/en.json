@@ -79,16 +79,17 @@
       "all": "All",
       "team": "Team",
       "conference": "Conference",
-      "app-development": "App Development",
-      "machine-learning": "Machine Learning",
-      "cybersecurity": "Cybersecurity",
-      "internet-of-things": "Internet of Things",
+      "doha": "Doha",
+      "ifc": "IFC",
+      "national": "National Information Technology Day",
+      "dialogue": "Dialogue on Technology in Business",
       "blockchain": "Blockchain"
     },
     "images": {
-      "workshop": "Workshop",
-      "collaborative": "Collaborative Innovation",
-      "advanced": "Advanced Analytics"
+      "doha": "Our participation in the Rowad Conference at the Arab Summit for Small and Medium Enterprises - Doha 2023",
+      "ifc": "Implementation of a training program for Tadawul funded by IFC",
+      "national": "Our participation in the National Information Technology Day",
+      "dialogue": "Our participation in a dialogue about the role of technology in business prosperity"
     },
     "button": "View Full Gallery"
   },

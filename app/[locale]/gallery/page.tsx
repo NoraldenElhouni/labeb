@@ -14,7 +14,7 @@ export default function GalleryPage() {
     "all",
     "team",
     "conference",
-    "app-development",
+    "doha",
     "machine-learning",
     "cybersecurity",
     "internet-of-things",

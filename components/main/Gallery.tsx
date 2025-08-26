@@ -7,19 +7,24 @@ function Gallery() {
   const t = useTranslations("gallery");
   const galleryImages = [
     {
-      src: "/gallery/assel-mahdi-g1.jpg",
-      alt: "Aseel And Mahdi",
-      title: t("images.workshop"),
+      src: "/gallery/doha/doha1.jpg",
+      alt: "doha",
+      title: t("images.doha"),
     },
     {
-      src: "/gallery/mahdi-suit-g2.jpg",
-      alt: "Mahdi",
-      title: t("images.collaborative"),
+      src: "/gallery/ifc/ifc1.jpg",
+      alt: "IFC",
+      title: t("images.ifc"),
     },
     {
-      src: "/gallery/taha-suit-g3.jpg",
-      alt: "Taha",
-      title: t("images.advanced"),
+      src: "/gallery/national/national1.jpg",
+      alt: "National",
+      title: t("images.national"),
+    },
+    {
+      src: "/gallery/dialogue/dialogue1.jpg",
+      alt: "Dialogue",
+      title: t("images.dialogue"),
     },
   ];
 
