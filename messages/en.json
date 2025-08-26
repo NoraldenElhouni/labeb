@@ -12,6 +12,36 @@
     "title": "About us",
     "description": " LABEB AI is a Libyan tech startup specializing in smart solutions powered by artificial intelligence. The company aims to enable organizations to achieve secure and efficient digital transformation while ensuring data privacy protection. Labeeb AI also offers specialized training programs to help businesses effectively utilize smart tools, enhancing their productivity and innovation. The company aspires to be a leading partner for institutions in Libya and the region by providing innovative technology solutions that support sustainable growth and the development of the local business environment."
   },
+  "services": {
+    "title": "Our Services",
+    "description": "End-to-end engineering solutions for modern businesses",
+    "list": {
+      "ai_solutions": {
+        "title": "AI Solutions Development",
+        "description": "Smart solutions based on artificial intelligence technologies tailored to various sectors."
+      },
+      "satellite_monitoring": {
+        "title": "Satellite Monitoring Systems",
+        "description": "Satellite-based monitoring system for leak detection, specifically designed for oil companies."
+      },
+      "ai_training": {
+        "title": "AI Training Programs",
+        "description": "Training programs and workshops on safe use of AI and digital transformation tools ensuring data privacy."
+      },
+      "technical_consulting": {
+        "title": "Technical Consulting",
+        "description": "Technical consulting services to help organizations adopt AI strategies and integrate them into operations."
+      },
+      "web3_services": {
+        "title": "Web3 Services",
+        "description": "Innovative solutions leveraging blockchain technology for decentralized applications and services."
+      },
+      "no_code_low_code_development": {
+        "title": "No Code / Low Code Development",
+        "description": "Empowering businesses to create applications with minimal coding through no-code and low-code platforms."
+      }
+    }
+  },
   "team": {
     "title": "Meet Our Team",
     "description": "Experienced professionals driving innovation in AI and digital transformation",

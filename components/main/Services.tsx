@@ -8,50 +8,46 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useTranslations } from "next-intl";
 
 function Services() {
+  const t = useTranslations("services");
   const services = [
     {
-      image: "/services/ai-brain-neural-network-technology.jpg",
+      image: "/services/ai-training-workshop-education-technology.jpg",
       alt: "AI Solutions Development",
-      title: "AI Solutions Development",
-      description:
-        "Smart solutions based on artificial intelligence technologies tailored to various sectors.",
+      title: t("list.ai_solutions.title"),
+      description: t("list.ai_solutions.description"),
     },
     {
       image: "/services/satellite-monitoring-oil-pipeline-detection.jpg",
       alt: "Satellite Monitoring Systems",
-      title: "Satellite Monitoring Systems",
-      description:
-        "Satellite-based monitoring system for leak detection, specifically designed for oil companies.",
+      title: t("list.satellite_monitoring.title"),
+      description: t("list.satellite_monitoring.description"),
     },
     {
-      image: "/services/ai-training-workshop-education-technology.jpg",
+      image: "/services/ai-brain-neural-network-technology.jpg",
       alt: "AI Training Programs",
-      title: "AI Training Programs",
-      description:
-        "Training programs and workshops on safe use of AI and digital transformation tools ensuring data privacy.",
+      title: t("list.ai_training.title"),
+      description: t("list.ai_training.description"),
     },
     {
       image: "/services/technical-consulting-team-collaboration.jpg",
       alt: "Technical Consulting",
-      title: "Technical Consulting",
-      description:
-        "Technical consulting services to help organizations adopt AI strategies and integrate them into operations.",
+      title: t("list.technical_consulting.title"),
+      description: t("list.technical_consulting.description"),
     },
     {
       image: "/services/web3.jpg",
       alt: "Web3 Services",
-      title: "Web3 Services",
-      description:
-        "Innovative solutions leveraging blockchain technology for decentralized applications and services.",
+      title: t("list.web3_services.title"),
+      description: t("list.web3_services.description"),
     },
     {
-      image: "/services/management-consulting-corporate-governance.jpg",
-      alt: "Management Consulting",
-      title: "Management Consulting",
-      description:
-        "Specialized management consulting in corporate governance to enhance performance and transparency.",
+      image: "/services/no-code-low-code-development.jpg",
+      alt: "No code low-code development",
+      title: t("list.no_code_low_code_development.title"),
+      description: t("list.no_code_low_code_development.description"),
     },
   ];
 
@@ -65,9 +61,9 @@ function Services() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Services</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t("title")}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            End-to-end engineering solutions for modern businesses
+            {t("description")}
           </p>
         </motion.div>
 
