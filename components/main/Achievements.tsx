@@ -1,8 +1,10 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
 import { Award } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Lightbox } from "../ui/lightbox";
 
 function Achievements() {
   const t = useTranslations("achievements");
@@ -10,28 +12,35 @@ function Achievements() {
     {
       title: t("list.project1.title"),
       description: t("list.project1.description"),
-      year: "2024",
-      image: "/Certification.png",
+      year: "2023",
+      image: "/achievements/achievements1.jpg",
     },
     {
       title: t("list.project2.title"),
       description: t("list.project2.description"),
-      year: "2024",
-      image: "/Certification.png",
-    },
-    {
-      title: t("list.project3.title"),
-      description: t("list.project3.description"),
       year: "2023",
-      image: "/Certification.png",
-    },
-    {
-      title: t("list.project4.title"),
-      description: t("list.project4.description"),
-      year: "2023",
-      image: "/Certification.png",
+      image: "/achievements/achievements2.jpg",
     },
   ];
+
+  // Lightbox state
+  const images = achievements.map((a) => ({
+    src: a.image,
+    alt: a.title,
+    title: a.title,
+  }));
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+  const closeLightbox = () => setLightboxOpen(false);
+  const nextImage = () =>
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  const previousImage = () =>
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
     <section id="achievements" className="py-24">
@@ -65,7 +74,8 @@ function Achievements() {
                     <img
                       src={achievement.image || "/placeholder.svg"}
                       alt={achievement.title}
-                      className="w-full h-32 object-cover rounded-lg mb-4"
+                      className="w-full h-[60%] object-cover rounded-lg mb-4 cursor-pointer"
+                      onClick={() => openLightbox(index)}
                     />
                     <div className="flex items-center justify-between mb-2">
                       <Award className="h-6 w-6 text-yellow-400" />
@@ -86,6 +96,14 @@ function Achievements() {
           ))}
         </div>
       </div>
+      <Lightbox
+        images={images}
+        isOpen={lightboxOpen}
+        currentIndex={currentImageIndex}
+        onClose={closeLightbox}
+        onNext={nextImage}
+        onPrevious={previousImage}
+      />
     </section>
   );
 }

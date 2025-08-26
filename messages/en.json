@@ -97,20 +97,12 @@
     "description": "Recognition and certifications that validate our commitment to excellence",
     "list": {
       "project1": {
-        "title": "Project 1",
-        "description": "Brief description of Project 1."
+        "title": "First Place – Second Business Incubator Program",
+        "description": "Labeb AI achieved first place in the Second Business Incubator Program organized by Innovation Garden of Tadawul on 26 November 2023, in recognition of their innovation, creativity, and excellence in project presentation"
       },
       "project2": {
-        "title": "Project 2",
-        "description": "Brief description of Project 2."
-      },
-      "project3": {
-        "title": "Project 3",
-        "description": "Brief description of Project 3."
-      },
-      "project4": {
-        "title": "Project 4",
-        "description": "Brief description of Project 4."
+        "title": "First Place – “Innovation Sahara” Business Incubator Program",
+        "description": "Labeb AI was awarded first place in the Innovation Sahara Business Incubator Program (Sabha, 18–30 July 2024), organized by Deraya Entrepreneurship Initiative and Tadawul. This highlights their exceptional innovation, creativity, and commitment to global standards of excellence."
       }
     }
   },
