@@ -104,8 +104,17 @@ function Hero() {
                          hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2
                          focus-visible:ring-offset-2 focus-visible:ring-violet-500"
             >
-              <PlayCircle className="mr-2 h-5 w-5" />
-              {t("buttons.our_services")}
+              {dir === "ltr" ? (
+                <>
+                  <PlayCircle className="mr-2 h-5 w-5" />
+                  {t("buttons.our_services")}
+                </>
+              ) : (
+                <>
+                  {t("buttons.our_services")}
+                  <PlayCircle className="mr-2 h-5 w-5" />
+                </>
+              )}
             </Button>
             <Button
               size="lg"
@@ -119,8 +128,17 @@ function Hero() {
                          hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2
                          focus-visible:ring-offset-2 focus-visible:ring-violet-500"
             >
-              <PlayCircle className="mr-2 h-5 w-5" />
-              {t("buttons.our_team")}
+              {dir === "ltr" ? (
+                <>
+                  <PlayCircle className="mr-2 h-5 w-5" />
+                  {t("buttons.our_team")}
+                </>
+              ) : (
+                <>
+                  {t("buttons.our_team")}
+                  <PlayCircle className="mr-2 h-5 w-5" />
+                </>
+              )}
             </Button>
             <Button
               size="lg"
