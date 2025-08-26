@@ -77,19 +77,18 @@
     "description": "Explore our innovative projects and cutting-edge solutions that showcase our expertise in AI, technology, and digital transformation.",
     "categories": {
       "all": "All",
-      "team": "Team",
-      "conference": "Conference",
       "doha": "Doha",
       "ifc": "IFC",
       "national": "National Information Technology Day",
       "dialogue": "Dialogue on Technology in Business",
-      "blockchain": "Blockchain"
+      "park": "Innovation Park Business Incubator"
     },
     "images": {
       "doha": "Our participation in the Rowad Conference at the Arab Summit for Small and Medium Enterprises - Doha 2023",
       "ifc": "Implementation of a training program for Tadawul funded by IFC",
       "national": "Our participation in the National Information Technology Day",
-      "dialogue": "Our participation in a dialogue about the role of technology in business prosperity"
+      "dialogue": "Our participation in a dialogue about the role of technology in business prosperity",
+      "park": "First place in the Innovation Park Business Incubator, supported by the European Union"
     },
     "button": "View Full Gallery"
   },

@@ -7,8 +7,13 @@ function Gallery() {
   const t = useTranslations("gallery");
   const galleryImages = [
     {
+      src: "/gallery/park/park1.jpg",
+      alt: "Park",
+      title: t("images.park"),
+    },
+    {
       src: "/gallery/doha/doha1.jpg",
-      alt: "doha",
+      alt: "Doha",
       title: t("images.doha"),
     },
     {

@@ -10,35 +10,122 @@ export default function GalleryPage() {
   const t = useTranslations("gallery");
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const categories = [
-    "all",
-    "team",
-    "conference",
-    "doha",
-    "machine-learning",
-    "cybersecurity",
-    "internet-of-things",
-    "blockchain",
-  ];
+  const categories = ["all", "doha", "ifc", "national", "dialogue", "park"];
 
   const allGalleryImages = [
     {
-      src: "/gallery/taha-suit-g3.jpg",
-      alt: "Taha",
-      title: t("images.advanced"),
-      category: t("categories.team"),
+      src: "/gallery/park/park1.jpg",
+      alt: "Park",
+      title: t("images.park"),
+      category: t("categories.park"),
     },
     {
-      src: "/gallery/mahdi-suit-g2.jpg",
-      alt: "Mahdi",
-      title: t("images.collaborative"),
-      category: t("categories.team"),
+      src: "/gallery/park/park2.jpg",
+      alt: "Park",
+      title: t("images.park"),
+      category: t("categories.park"),
     },
     {
-      src: "/gallery/assel-mahdi-g1.jpg",
-      alt: "Aseel And Mahdi",
-      title: t("images.workshop"),
-      category: t("categories.conference"),
+      src: "/gallery/doha/doha1.jpg",
+      alt: "Doha",
+      title: t("images.doha"),
+      category: t("categories.doha"),
+    },
+    {
+      src: "/gallery/doha/doha2.jpg",
+      alt: "Doha",
+      title: t("images.doha"),
+      category: t("categories.doha"),
+    },
+    {
+      src: "/gallery/doha/doha3.jpg",
+      alt: "Doha",
+      title: t("images.doha"),
+      category: t("categories.doha"),
+    },
+    {
+      src: "/gallery/doha/doha4.jpg",
+      alt: "Doha",
+      title: t("images.doha"),
+      category: t("categories.doha"),
+    },
+    {
+      src: "/gallery/doha/doha5.jpg",
+      alt: "Doha",
+      title: t("images.doha"),
+      category: t("categories.doha"),
+    },
+    {
+      src: "/gallery/ifc/ifc1.jpg",
+      alt: "IFC",
+      title: t("images.ifc"),
+      category: t("categories.ifc"),
+    },
+    {
+      src: "/gallery/ifc/ifc2.jpg",
+      alt: "IFC",
+      title: t("images.ifc"),
+      category: t("categories.ifc"),
+    },
+    {
+      src: "/gallery/ifc/ifc3.jpg",
+      alt: "IFC",
+      title: t("images.ifc"),
+      category: t("categories.ifc"),
+    },
+    {
+      src: "/gallery/ifc/ifc4.jpg",
+      alt: "IFC",
+      title: t("images.ifc"),
+      category: t("categories.ifc"),
+    },
+    {
+      src: "/gallery/ifc/ifc5.jpg",
+      alt: "IFC",
+      title: t("images.ifc"),
+      category: t("categories.ifc"),
+    },
+    {
+      src: "/gallery/ifc/ifc6.jpg",
+      alt: "IFC",
+      title: t("images.ifc"),
+      category: t("categories.ifc"),
+    },
+    {
+      src: "/gallery/national/national1.jpg",
+      alt: "National",
+      title: t("images.national"),
+      category: t("categories.national"),
+    },
+    {
+      src: "/gallery/national/national3.jpg",
+      alt: "National",
+      title: t("images.national"),
+      category: t("categories.national"),
+    },
+    {
+      src: "/gallery/national/national4.jpg",
+      alt: "National",
+      title: t("images.national"),
+      category: t("categories.national"),
+    },
+    {
+      src: "/gallery/dialogue/dialogue1.jpg",
+      alt: "Dialogue",
+      title: t("images.dialogue"),
+      category: t("categories.dialogue"),
+    },
+    {
+      src: "/gallery/dialogue/dialogue2.jpg",
+      alt: "Dialogue",
+      title: t("images.dialogue"),
+      category: t("categories.dialogue"),
+    },
+    {
+      src: "/gallery/dialogue/dialogue3.jpg",
+      alt: "Dialogue",
+      title: t("images.dialogue"),
+      category: t("categories.dialogue"),
     },
   ];
 
@@ -89,11 +176,7 @@ export default function GalleryPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <ModernGallery
-              images={filteredImages}
-              showViewMore={false}
-              maxImages={4}
-            />
+            <ModernGallery images={filteredImages} showViewMore={false} />
           </motion.div>
         </div>
       </section>
