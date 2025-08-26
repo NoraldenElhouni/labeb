@@ -12,19 +12,18 @@ function Team() {
       name: t("members.assel"),
       position: "Co-founder and CEO",
       image: "/team/Assel-melad.jpg",
-      link: "https://www.linkedin.com/in/assel",
+      link: "https://www.linkedin.com/in/assel-melad/",
     },
     {
       name: t("members.mahdi"),
       position: "Co-founder and CTO",
       image: "/team/mahdi.jpg",
-      // ❌ no link
+      link: "https://www.linkedin.com/in/mahdi-alagab/",
     },
     {
       name: t("members.taha"),
       position: "Communication",
       image: "/team/Taha-mohammed.jpg",
-      link: "/team/taha",
     },
     {
       name: t("members.aysha"),
@@ -40,7 +39,7 @@ function Team() {
       name: t("members.noralden"),
       position: "Web Developer",
       image: "/team/Noralden-alhouni.jpg",
-      link: "/team/noralden",
+      link: "https://www.linkedin.com/in/nouralden-alhouni-515488212/",
     },
   ];
 
