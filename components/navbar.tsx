@@ -1,10 +1,13 @@
 "use client";
 
+import type React from "react";
+
 import { useEffect, useState } from "react";
-import { Home, Settings, Search } from "lucide-react";
+import { Home } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ThemeToggle } from "./buttons/ThemeToggle";
 import LocaleSwitcher from "./LocaleSwitcher";
+import { useRouter } from "next/navigation";
+import { ThemeToggle } from "./buttons/ThemeToggle";
 
 const SCROLL_COLLAPSE_Y = 80;
 
@@ -30,6 +33,7 @@ function IconButton({
         "backdrop-blur-md bg-black/10 dark:bg-white/10",
         "shadow-lg border border-white/15 dark:border-white/10",
         "transition-transform active:scale-95",
+        "hover:bg-black/15 dark:hover:bg-white/15",
         className,
       ].join(" ")}
     >
@@ -41,6 +45,7 @@ function IconButton({
 const Navbar = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const onScroll = () => {
@@ -51,6 +56,10 @@ const Navbar = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleHomeClick = () => {
+    router.push("/");
+  };
 
   // wrapper styles → top bar, clicks only inside children
   const baseWrap =
@@ -71,36 +80,12 @@ const Navbar = () => {
           >
             <div className="pointer-events-auto">
               <div className="flex gap-3">
-                <IconButton
-                  label="Home"
-                  onClick={() =>
-                    window.scrollTo({ top: 0, behavior: "smooth" })
-                  }
-                >
+                <IconButton label="Home" onClick={handleHomeClick}>
                   <Home className="w-6 h-6" />
                 </IconButton>
 
-                <IconButton
-                  label="Settings"
-                  onClick={() => alert("Settings action")}
-                >
-                  <Settings className="w-6 h-6" />
-                </IconButton>
-
-                <IconButton
-                  label="Search"
-                  onClick={() => alert("Search action")}
-                >
-                  <Search className="w-6 h-6" />
-                </IconButton>
-
-                {/* Theme toggle (its own button; no nesting issues) */}
-                <div className="h-12 w-12">
-                  <ThemeToggle />
-                </div>
-                <div className="h-12 w-12">
-                  <LocaleSwitcher />
-                </div>
+                <ThemeToggle />
+                <LocaleSwitcher />
               </div>
             </div>
           </motion.div>
@@ -121,7 +106,7 @@ const Navbar = () => {
             <button
               aria-label="Open menu"
               onClick={() => setOpen(true)}
-              className="pointer-events-auto rounded-2xl backdrop-blur-md bg-black/10 dark:bg-white/10 shadow-lg border border-white/15 dark:border-white/10 p-3 md:p-3.5"
+              className="pointer-events-auto rounded-2xl backdrop-blur-md bg-black/10 dark:bg-white/10 shadow-lg border border-white/15 dark:border-white/10 p-3 md:p-3.5 hover:bg-black/15 dark:hover:bg-white/15 transition-colors"
             >
               <Home className="w-7 h-7 md:w-8 md:h-8" />
             </button>
@@ -157,32 +142,13 @@ const Navbar = () => {
                       label="Home"
                       onClick={() => {
                         setOpen(false);
-                        window.scrollTo({ top: 0, behavior: "smooth" });
+                        handleHomeClick();
                       }}
                     >
                       <Home className="w-6 h-6" />
                     </IconButton>
-                    <IconButton
-                      label="Settings"
-                      onClick={() => {
-                        setOpen(false);
-                        alert("Settings action");
-                      }}
-                    >
-                      <Settings className="w-6 h-6" />
-                    </IconButton>
-                    <IconButton
-                      label="Search"
-                      onClick={() => {
-                        setOpen(false);
-                        alert("Search action");
-                      }}
-                    >
-                      <Search className="w-6 h-6" />
-                    </IconButton>
-                    <div className="h-12 w-12">
-                      <ThemeToggle />
-                    </div>
+                    <ThemeToggle />
+                    <LocaleSwitcher />
                   </div>
                 </div>
               </div>

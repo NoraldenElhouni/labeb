@@ -1,45 +1,88 @@
+"use client";
+
+import * as React from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select";
+import { Globe } from "lucide-react";
 
 interface LocaleSwitcherSelectProps {
   defaultValue: string;
   label: string;
   children: React.ReactNode;
-  width: string; // allow both Tailwind class and raw CSS value
+  width?: string;
 }
 
 export default function LocaleSwitcherSelect({
   defaultValue,
   label,
   children,
-  width,
 }: LocaleSwitcherSelectProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const [selectedLocale, setSelectedLocale] = useState<string>(defaultValue);
+  const [selectedLocale, setSelectedLocale] =
+    React.useState<string>(defaultValue);
+  const [mounted, setMounted] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => setMounted(true), []);
+
+  React.useEffect(() => {
+    if (!mounted) return;
+
     const storedLocale = localStorage.getItem("locale");
     if (storedLocale && storedLocale !== selectedLocale) {
       setSelectedLocale(storedLocale);
     } else if (!storedLocale && defaultValue !== selectedLocale) {
-      // If no stored preference, use the provided default value (should be Arabic)
       setSelectedLocale(defaultValue);
     }
-  }, [selectedLocale, defaultValue]);
+  }, [selectedLocale, defaultValue, mounted]);
 
-  const handleValueChange = (newLocale: string) => {
+  if (!mounted) {
+    // Avoid hydration mismatch: render a neutral button until mounted
+    return (
+      <button
+        className="inline-flex items-center justify-center gap-2 h-12 px-4 rounded-2xl min-w-fit backdrop-blur-md bg-black/10 dark:bg-white/10 shadow-lg border border-white/15 dark:border-white/10 transition-transform active:scale-95"
+        aria-label={label}
+        disabled
+      >
+        <Globe className="h-5 w-5" />
+        <span className="text-sm font-medium">{defaultValue}</span>
+      </button>
+    );
+  }
+
+  // Extract locale options from children
+  const localeOptions = React.Children.toArray(children)
+    .filter(
+      (
+        child
+      ): child is React.ReactElement<{
+        value: string;
+        children: React.ReactNode;
+      }> => React.isValidElement(child)
+    )
+    .map((child) => {
+      const element = child as React.ReactElement<{
+        value: string;
+        children: React.ReactNode;
+      }>;
+      return {
+        value: element.props.value,
+        label: element.props.children as string,
+      };
+    });
+
+  const currentIndex = localeOptions.findIndex(
+    (opt) => opt.value === selectedLocale
+  );
+  const nextIndex = (currentIndex + 1) % localeOptions.length;
+  const nextLocale = localeOptions[nextIndex];
+
+  const handleClick = () => {
+    if (!nextLocale) return;
+
+    const newLocale = nextLocale.value;
     setSelectedLocale(newLocale);
     localStorage.setItem("locale", newLocale);
-    // Replace the locale in the pathname (assuming /[locale]/... structure)
+
     const segments = pathname?.split("/") ?? [];
     if (segments[1]) {
       segments[1] = newLocale;
@@ -48,36 +91,31 @@ export default function LocaleSwitcherSelect({
     }
   };
 
-  // Extract locale values and labels from children (option elements)
-  const localeOptions = Array.isArray(children)
-    ? children.map((child: React.ReactElement) => ({
-        value: (child as React.ReactElement<{ value: string }>).props.value,
-        label: (child as React.ReactElement<{ children: string }>).props
-          .children,
-      }))
-    : [];
+  const currentLocale = localeOptions.find(
+    (opt) => opt.value === selectedLocale
+  );
 
   return (
-    <div>
-      <label>{label}</label>
-      <Select value={selectedLocale} onValueChange={handleValueChange}>
-        <SelectTrigger
-          className={width.startsWith("w-") ? width : undefined}
-          style={!width.startsWith("w-") ? { width } : undefined}
-          dir={selectedLocale === "ar" ? "rtl" : "ltr"}
-        >
-          <SelectValue placeholder={label} />
-        </SelectTrigger>
-        <SelectContent dir={selectedLocale === "ar" ? "rtl" : "ltr"}>
-          <SelectGroup>
-            {localeOptions.map((opt) => (
-              <SelectItem key={opt.value} value={opt.value}>
-                {opt.label}
-              </SelectItem>
-            ))}
-          </SelectGroup>
-        </SelectContent>
-      </Select>
-    </div>
+    <button
+      aria-label={`Current: ${
+        currentLocale?.label || selectedLocale
+      }. Click to switch to ${nextLocale?.label || "next locale"}`}
+      onClick={handleClick}
+      className={[
+        "inline-flex items-center justify-center gap-2",
+        "h-12 px-4 rounded-2xl min-w-fit",
+        "backdrop-blur-md bg-black/10 dark:bg-white/10",
+        "shadow-lg border border-white/15 dark:border-white/10",
+        "transition-transform active:scale-95",
+        "hover:bg-black/15 dark:hover:bg-white/15",
+        "relative",
+      ].join(" ")}
+    >
+      <Globe className="h-5 w-5" />
+      <span className="text-sm font-medium">
+        {currentLocale?.label || selectedLocale}
+      </span>
+      <span className="sr-only">{label}</span>
+    </button>
   );
 }

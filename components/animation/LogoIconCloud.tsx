@@ -3,29 +3,11 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import {
-  Cpu,
   Brain,
-  Code2,
-  Cloud,
-  Database,
-  Github,
-  GitBranch,
-  Boxes,
-  Bot,
   Shield,
-  Globe,
-  Rocket,
-  Zap,
-  Layers,
-  Terminal,
-  Cog,
-  Wrench,
-  Server,
   Satellite,
-  Wifi,
   BarChart,
   GraduationCap,
-  User,
   Users,
 } from "lucide-react";
 import { JSX, useMemo } from "react";

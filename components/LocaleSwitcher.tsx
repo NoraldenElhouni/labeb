@@ -10,7 +10,7 @@ interface LocaleSwitcherProps {
 }
 
 export default function LocaleSwitcher({
-  width = "w-32",
+  width = "w-12", // Updated default width to match button size
 }: LocaleSwitcherProps) {
   const locale: string = useLocale();
   const [defaultLocale, setDefaultLocale] = useState(routing.defaultLocale);
@@ -26,8 +26,8 @@ export default function LocaleSwitcher({
   }, [locale, defaultLocale]);
 
   const languageNames: Record<string, { en: string; ar: string }> = {
-    ar: { en: "Arabic", ar: "العربية" },
-    en: { en: "English", ar: "الإنجليزية" },
+    ar: { en: "العربية", ar: "العربية" },
+    en: { en: "English", ar: "English" },
   };
 
   return (
