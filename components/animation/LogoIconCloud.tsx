@@ -67,8 +67,6 @@ export default function LogoIconCloud() {
     () => [
       { radius: 160, iconCount: 10, duration: 30, delay: 0, size: 20 },
       { radius: 120, iconCount: 8, duration: 25, delay: 1, size: 18 },
-      { radius: 85, iconCount: 6, duration: 20, delay: 2, size: 16 },
-      { radius: 55, iconCount: 4, duration: 15, delay: 0.5, size: 14 },
     ],
     []
   );
@@ -84,7 +82,7 @@ export default function LogoIconCloud() {
       return (
         <motion.div
           key={`${radius}-${index}`}
-          className="absolute pointer-events-none"
+          className="absolute pointer-events-none "
           style={{
             left: "50%",
             top: "50%",
@@ -148,7 +146,7 @@ export default function LogoIconCloud() {
   };
 
   return (
-    <div className="relative w-[400px] h-[400px] flex items-center justify-center select-none">
+    <div className="relative w-[400px] h-[400px] flex items-center justify-center select-none mt-14">
       {/* Background rings */}
       <div
         className="absolute inset-0 rounded-full border border-white/5"

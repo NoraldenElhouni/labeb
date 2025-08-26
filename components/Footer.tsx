@@ -1,47 +1,139 @@
 "use client";
 import { Button } from "./ui/button";
-import { Twitter, Github, Linkedin } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
+  const t = useTranslations("footer");
   return (
-    <footer className="bg-background border-t border-white/10 py-12">
+    <footer
+      id="footer"
+      className="bg-background border-t border-white/10 py-12"
+    >
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent mb-4">
-              LABEB AI
+              {t("name")}
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">
-              Libyan tech startup specializing in smart solutions powered by
-              artificial intelligence for secure digital transformation.
+              {t("description")}
             </p>
             <div className="flex space-x-4">
-              <Button>
-                <Twitter />
+              <Button asChild>
+                <Link href="mailto:yourname@example.com">
+                  <Mail className="h-4 w-4" />
+                </Link>
               </Button>
-              <Button variant="outline" size="sm">
-                <Github className="h-4 w-4" />
+              <Button variant="outline" size="sm" asChild>
+                <Link
+                  href="https://wa.me/218917722558"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaWhatsapp className="h-4 w-4" />
+                </Link>
               </Button>
-              <Button variant="outline" size="sm">
-                <Linkedin className="h-4 w-4" />
+              <Button variant="outline" size="sm" asChild>
+                <Link
+                  href="https://www.linkedin.com/in/yourprofile/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h4 className="font-semibold mb-4">{t("links.quick")}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <button>Services</button>
+                <button
+                  className="hover:text-foreground transition-colors"
+                  onClick={() =>
+                    document
+                      .getElementById("about")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  {t("links.about")}
+                </button>
               </li>
               <li>
-                <button>Case Studies</button>
+                <button
+                  className="hover:text-foreground transition-colors"
+                  onClick={() =>
+                    document
+                      .getElementById("services")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  {t("links.services")}
+                </button>
               </li>
               <li>
-                <button>Process</button>
+                <button
+                  className="hover:text-foreground transition-colors"
+                  onClick={() =>
+                    document
+                      .getElementById("solutions")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  {t("links.solutions")}
+                </button>
               </li>
               <li>
-                <button>Contact</button>
+                <button
+                  className="hover:text-foreground transition-colors"
+                  onClick={() =>
+                    document
+                      .getElementById("team")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  {t("links.team")}
+                </button>
+              </li>
+              <li>
+                <button
+                  className="hover:text-foreground transition-colors"
+                  onClick={() =>
+                    document
+                      .getElementById("gallery")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  {t("links.gallery")}
+                </button>
+              </li>
+              <li>
+                <button
+                  className="hover:text-foreground transition-colors"
+                  onClick={() =>
+                    document
+                      .getElementById("achievements")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  {t("links.achievements")}
+                </button>
+              </li>
+              <li>
+                <button
+                  className="hover:text-foreground transition-colors"
+                  onClick={() =>
+                    document
+                      .getElementById("partners")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  {t("links.partners")}
+                </button>
               </li>
             </ul>
           </div>
@@ -78,7 +170,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2024 LABEB AI. All rights reserved.</p>
+          <p>&copy; 2023 LABEB AI. {t("right")}</p>
         </div>
       </div>
     </footer>

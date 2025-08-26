@@ -2,7 +2,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "../ui/button";
 import { ArrowRight, PlayCircle } from "lucide-react";
-import LogoCloud from "../animation/Logocloud";
 import { Particles } from "../magicui/particles";
 import LogoIconCloud from "../animation/LogoIconCloud";
 
@@ -19,7 +18,7 @@ function Hero() {
     >
       <Particles
         className="absolute inset-0"
-        quantity={50}
+        quantity={100}
         ease={80}
         color="#0ea5e9"
         refresh={false}
@@ -38,7 +37,6 @@ function Hero() {
       <div className="relative z-10 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center gap-6">
           {/* Logo + orbit */}
-          <LogoCloud />
           <LogoIconCloud />
 
           {/* Heading */}
@@ -79,7 +77,7 @@ function Hero() {
               size="lg"
               onClick={() =>
                 document
-                  .getElementById("contact")
+                  .getElementById("about")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
               className="group relative px-8 py-6 text-base shadow-lg shadow-blue-500/10
@@ -125,7 +123,7 @@ function Hero() {
               variant="outline"
               onClick={() =>
                 document
-                  .getElementById("services")
+                  .getElementById("footer")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
               className="px-8 py-6 text-base border-white/20 bg-background/30 backdrop-blur
@@ -133,7 +131,7 @@ function Hero() {
                          focus-visible:ring-offset-2 focus-visible:ring-violet-500"
             >
               <PlayCircle className="mr-2 h-5 w-5" />
-              Our projects
+              Contact us
             </Button>
           </motion.div>
         </div>

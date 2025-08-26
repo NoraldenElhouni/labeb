@@ -2,5 +2,20 @@
   "home": {
     "title": "Welcome to Labeb",
     "description": "Your ultimate platform for managing and sharing your favorite books."
+  },
+  "footer": {
+    "name": "LABEB AI",
+    "description": "Libyan tech startup specializing in smart solutions powered by artificial intelligence for secure digital transformation.",
+    "links": {
+      "quick": "Quick Links",
+      "about": "About",
+      "services": "Services",
+      "solutions": "Why LABEB",
+      "team": "Team",
+      "gallery": "Gallery",
+      "achievements": "Achievements",
+      "partners": "Partners"
+    },
+    "right": "All rights reserved."
   }
 }
