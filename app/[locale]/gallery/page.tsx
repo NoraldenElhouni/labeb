@@ -26,6 +26,24 @@ export default function GalleryPage() {
       category: t("categories.park"),
     },
     {
+      src: "/gallery/park/park3.jpg",
+      alt: "Park",
+      title: t("images.park"),
+      category: t("categories.park"),
+    },
+    {
+      src: "/gallery/park/park4.jpg",
+      alt: "Park",
+      title: t("images.park"),
+      category: t("categories.park"),
+    },
+    {
+      src: "/gallery/park/park5.jpg",
+      alt: "Park",
+      title: t("images.park"),
+      category: t("categories.park"),
+    },
+    {
       src: "/gallery/doha/doha1.jpg",
       alt: "Doha",
       title: t("images.doha"),
