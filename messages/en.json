@@ -3,6 +3,18 @@
     "title": "Welcome to Labeb",
     "description": "Your ultimate platform for managing and sharing your favorite books."
   },
+  "team": {
+    "title": "Meet Our Team",
+    "description": "Experienced professionals driving innovation in AI and digital transformation",
+    "members": {
+      "assel": "Assel Melad",
+      "mahdi": "Mahdi Alagab",
+      "taha": "Taha Mohammed",
+      "aysha": "Aysha Ehmeeid",
+      "suhair": "Suhair Ali",
+      "noralden": "Noralden Alhouni"
+    }
+  },
   "footer": {
     "name": "LABEB AI",
     "description": "Libyan tech startup specializing in smart solutions powered by artificial intelligence for secure digital transformation.",

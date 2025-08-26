@@ -1,36 +1,38 @@
 "use client";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
+import { useTranslations } from "next-intl";
 function Team() {
+  const t = useTranslations("team");
   const teamMembers = [
     {
-      name: "Assel Melad",
+      name: t("members.assel"),
       position: "Co-founder and CEO",
       image: "/team/Assel-melad.jpg",
     },
     {
-      name: "Mahdi",
+      name: t("members.mahdi"),
       position: "Co-founder and CTO",
-      image: "/team/Mahdi.jpg",
+      image: "/team/mahdi.jpg",
     },
     {
-      name: "Taha Mohammed",
-      position: "Suhair Ali",
+      name: t("members.taha"),
+      position: "Communication",
       image: "/team/Taha-mohammed.jpg",
     },
     {
-      name: "Aysha Ehmeeid",
+      name: t("members.aysha"),
       position: "Coordinator of training",
       image: "/team/Aysha-ehmeeid.jpg",
     },
     {
-      name: "Suhair Ali",
+      name: t("members.suhair"),
       position: "UI/UX Designer",
       image: "/team/Suhair-ali.jpg",
     },
     {
-      name: "Noralden Alhouni",
-      position: "dev",
+      name: t("members.noralden"),
+      position: "Web Developer",
       image: "/team/Noralden-alhouni.jpg",
     },
   ];
@@ -45,10 +47,9 @@ function Team() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Meet Our Team</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t("title")}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Experienced professionals driving innovation in AI and digital
-            transformation
+            {t("description")}
           </p>
         </motion.div>
 
