@@ -14,7 +14,7 @@
   },
   "services": {
     "title": "Our Services",
-    "description": "End-to-end engineering solutions for modern businesses",
+    "description": "End-to-end Technology solutions for modern businesses",
     "list": {
       "ai_solutions": {
         "title": "AI Solutions Development",
@@ -22,7 +22,7 @@
       },
       "satellite_monitoring": {
         "title": "Satellite Monitoring Systems",
-        "description": "Satellite-based monitoring system for leak detection, specifically designed for oil companies."
+        "description": "Satellite-based monitoring system for leak detection, specifically designed for oil and water companies."
       },
       "ai_training": {
         "title": "AI Training Programs",
@@ -47,16 +47,13 @@
     "description": "We deliver results that matter to your business.",
     "list": {
       "reliability": {
-        "title": "Reliability",
-        "description": "Template libraries + battle-tested patterns."
+        "title": "Reliability"
       },
       "efficiency": {
-        "title": "Efficiency",
-        "description": "Quality gates, testing, SLOs."
+        "title": "Efficiency"
       },
       "knowledge": {
-        "title": "Knowledge",
-        "description": "Least-privilege, secrets, compliance hints."
+        "title": "Knowledge"
       }
     }
   },

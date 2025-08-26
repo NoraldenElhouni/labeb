@@ -9,17 +9,14 @@ function Solutions() {
     {
       icon: Rocket,
       title: t("list.reliability.title"),
-      description: t("list.reliability.description"),
     },
     {
       icon: Shield,
       title: t("list.efficiency.title"),
-      description: t("list.efficiency.description"),
     },
     {
       icon: BookOpen,
       title: t("list.knowledge.title"),
-      description: t("list.knowledge.description"),
     },
   ];
 
@@ -52,9 +49,6 @@ function Solutions() {
               <div className="bg-gradient-to-br from-blue-500/20 to-violet-500/20 rounded-2xl p-8 h-full">
                 <solution.icon className="h-16 w-16 text-blue-400 mx-auto mb-6" />
                 <h3 className="text-2xl font-bold mb-4">{solution.title}</h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  {solution.description}
-                </p>
               </div>
             </motion.div>
           ))}

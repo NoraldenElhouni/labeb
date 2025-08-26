@@ -18,7 +18,7 @@ function Achievements() {
     {
       title: t("list.project2.title"),
       description: t("list.project2.description"),
-      year: "2023",
+      year: "2024",
       image: "/achievements/achievements2.jpg",
     },
   ];
