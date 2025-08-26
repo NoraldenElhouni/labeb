@@ -42,6 +42,24 @@
       }
     }
   },
+  "solutions": {
+    "title": "Why Choose LABEB AI",
+    "description": "We deliver results that matter to your business.",
+    "list": {
+      "reliability": {
+        "title": "Reliability",
+        "description": "Template libraries + battle-tested patterns."
+      },
+      "efficiency": {
+        "title": "Efficiency",
+        "description": "Quality gates, testing, SLOs."
+      },
+      "knowledge": {
+        "title": "Knowledge",
+        "description": "Least-privilege, secrets, compliance hints."
+      }
+    }
+  },
   "team": {
     "title": "Meet Our Team",
     "description": "Experienced professionals driving innovation in AI and digital transformation",

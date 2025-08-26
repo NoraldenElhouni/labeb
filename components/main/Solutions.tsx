@@ -1,23 +1,25 @@
 "use client";
 import { BookOpen, Rocket, Shield } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 function Solutions() {
+  const t = useTranslations("solutions");
   const solutions = [
     {
       icon: Rocket,
-      title: "Reliability",
-      description: "Template libraries + battle-tested patterns.",
+      title: t("list.reliability.title"),
+      description: t("list.reliability.description"),
     },
     {
       icon: Shield,
-      title: "Efficiency",
-      description: "Quality gates, testing, SLOs.",
+      title: t("list.efficiency.title"),
+      description: t("list.efficiency.description"),
     },
     {
       icon: BookOpen,
-      title: "knowledge",
-      description: "Least-privilege, secrets, compliance hints.",
+      title: t("list.knowledge.title"),
+      description: t("list.knowledge.description"),
     },
   ];
 
@@ -31,11 +33,9 @@ function Solutions() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Why Choose LABEB AI
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t("title")}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We deliver results that matter to your business
+            {t("description")}
           </p>
         </motion.div>
 
