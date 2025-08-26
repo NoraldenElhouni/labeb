@@ -1,7 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 function SuccessPartners() {
+  const t = useTranslations("partners");
   const partners = [
     "Innovation Garden",
     "Tadauowl",
@@ -27,12 +29,9 @@ function SuccessPartners() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Success Partners
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t("title")}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Trusted by leading organizations and supported by prestigious
-            institutions
+            {t("description")}
           </p>
         </motion.div>
 

@@ -62,18 +62,20 @@ export default function LogoIconCloud() {
     Wifi,
   ];
 
-  // Memoized orbit configurations for better performance
+  // Updated orbit configurations - both have 6 icons now
   const orbitConfigs: OrbitRingConfig[] = useMemo(
     () => [
-      { radius: 160, iconCount: 10, duration: 30, delay: 0, size: 20 },
-      { radius: 120, iconCount: 8, duration: 25, delay: 1, size: 18 },
+      { radius: 160, iconCount: 6, duration: 30, delay: 0, size: 20 },
+      { radius: 120, iconCount: 6, duration: 25, delay: 1, size: 18 },
     ],
     []
   );
 
   const createOrbitRing = (config: OrbitRingConfig): JSX.Element[] => {
     const { radius, iconCount, duration, delay, size } = config;
-    const selectedIcons = icons.slice(0, iconCount);
+    // Use different icons for each orbit to avoid duplicates
+    const startIndex = config.radius === 160 ? 0 : 6;
+    const selectedIcons = icons.slice(startIndex, startIndex + iconCount);
 
     return selectedIcons.map((Icon: IconType, index: number) => {
       const angle = (360 / iconCount) * index;
@@ -82,7 +84,7 @@ export default function LogoIconCloud() {
       return (
         <motion.div
           key={`${radius}-${index}`}
-          className="absolute pointer-events-none "
+          className="absolute"
           style={{
             left: "50%",
             top: "50%",
@@ -96,31 +98,18 @@ export default function LogoIconCloud() {
             delay: itemDelay,
           }}
         >
-          <motion.div
-            className="flex items-center justify-center pointer-events-auto"
+          <div
+            className="flex items-center justify-center group cursor-pointer"
             style={{
               transform: `translate(-50%, -50%) rotate(${angle}deg) translateX(${radius}px) rotate(-${angle}deg)`,
             }}
-            whileHover={
-              shouldReduceMotion
-                ? {}
-                : {
-                    scale: 1.3,
-                    rotate: 360,
-                  }
-            }
-            whileTap={{ scale: 0.95 }}
-            transition={{
-              type: "spring",
-              stiffness: 400,
-              damping: 15,
-              rotate: { duration: 0.6 },
-            }}
           >
             <motion.div
-              className="relative group"
+              className="relative"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.95 }}
               transition={{
                 delay: itemDelay + 0.5,
                 type: "spring",
@@ -131,15 +120,15 @@ export default function LogoIconCloud() {
               {/* Glow effect */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-violet-400/20 blur-sm group-hover:blur-md group-hover:from-blue-400/40 group-hover:to-violet-400/40 transition-all duration-300" />
 
-              {/* Icon container */}
-              <div className="relative p-2.5 rounded-full bg-background/15 backdrop-blur-sm border border-white/10 shadow-lg group-hover:bg-background/25 group-hover:border-white/20 group-hover:shadow-xl transition-all duration-300">
+              {/* Icon container with better light/dark mode support */}
+              <div className="relative p-3 rounded-full bg-white/10 dark:bg-background/15 backdrop-blur-sm border border-gray-200/20 dark:border-white/10 shadow-lg group-hover:bg-white/20 dark:group-hover:bg-background/25 group-hover:border-gray-200/30 dark:group-hover:border-white/20 group-hover:shadow-xl transition-all duration-300">
                 <Icon
                   size={size}
-                  className="text-foreground/70 group-hover:text-foreground group-hover:drop-shadow-sm transition-all duration-300"
+                  className="text-gray-700 dark:text-foreground/70 group-hover:text-gray-900 dark:group-hover:text-foreground group-hover:drop-shadow-sm transition-all duration-300"
                 />
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </motion.div>
       );
     });
@@ -149,15 +138,15 @@ export default function LogoIconCloud() {
     <div className="relative w-[400px] h-[400px] flex items-center justify-center select-none mt-14">
       {/* Background rings */}
       <div
-        className="absolute inset-0 rounded-full border border-white/5"
+        className="absolute inset-0 rounded-full border border-gray-200/10 dark:border-white/5"
         style={{ width: "320px", height: "320px", margin: "auto" }}
       />
       <div
-        className="absolute inset-0 rounded-full border border-white/3"
+        className="absolute inset-0 rounded-full border border-gray-200/8 dark:border-white/3"
         style={{ width: "240px", height: "240px", margin: "auto" }}
       />
       <div
-        className="absolute inset-0 rounded-full border border-white/2"
+        className="absolute inset-0 rounded-full border border-gray-200/5 dark:border-white/2"
         style={{ width: "170px", height: "170px", margin: "auto" }}
       />
 
@@ -189,13 +178,19 @@ export default function LogoIconCloud() {
         }
         whileTap={{ scale: 0.95 }}
       >
-        {/* Outer glow */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/30 to-violet-500/30 blur-2xl animate-pulse" />
+        {/* Enhanced outer glow with blur background */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/30 to-violet-500/30 blur-3xl animate-pulse" />
 
-        {/* Main container */}
-        <div className="relative p-6 rounded-full bg-background/20 backdrop-blur-md border border-white/20 shadow-2xl">
+        {/* Additional blur layer for better background effect */}
+        <div className="absolute inset-0 rounded-full bg-white/30 dark:bg-background/30 blur-2xl" />
+
+        {/* Main container with enhanced blur */}
+        <div className="relative p-6 rounded-full bg-white/30 dark:bg-background/20 backdrop-blur-xl border border-gray-200/30 dark:border-white/20 shadow-2xl">
           {/* Inner glow */}
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/10 to-violet-500/10" />
+
+          {/* Additional inner blur layer */}
+          <div className="absolute inset-0 rounded-full bg-white/20 dark:bg-background/10 backdrop-blur-sm" />
 
           {/* Logo */}
           <div className="relative">
@@ -228,10 +223,10 @@ export default function LogoIconCloud() {
           ease: "easeInOut",
         }}
       >
-        <div className="w-40 h-40 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-violet-500/20 rounded-full blur-2xl" />
+        <div className="w-40 h-40 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-violet-500/20 rounded-full blur-3xl" />
       </motion.div>
 
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-r from-cyan-400/15 to-blue-400/15 rounded-full blur-xl animate-pulse pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-r from-cyan-400/15 to-blue-400/15 rounded-full blur-2xl animate-pulse pointer-events-none" />
     </div>
   );
 }

@@ -4,55 +4,61 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { ModernGallery } from "@/components/modern-gallery";
-
-const allGalleryImages = [
-  {
-    src: "/gallery/taha-suit-g3.jpg",
-    alt: "Taha",
-    title: "Advanced Analytics",
-    category: "Team",
-  },
-  {
-    src: "/gallery/mahdi-suit-g2.jpg",
-    alt: "Mahdi",
-    title: "Collaborative Innovation",
-    category: "Team",
-  },
-  {
-    src: "/gallery/assel-mahdi-g1.jpg",
-    alt: "Aseel And Mahdi",
-    title: "Workshop",
-    category: "Conference",
-  },
-];
-
-const categories = [
-  "All",
-  "Team",
-  "Conference",
-  "App Development",
-  "Machine Learning",
-  "Cybersecurity",
-  "Internet of Things",
-  "Blockchain",
-];
+import { useTranslations } from "next-intl";
 
 export default function GalleryPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const t = useTranslations("gallery");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  const categories = [
+    "all",
+    "team",
+    "conference",
+    "app-development",
+    "machine-learning",
+    "cybersecurity",
+    "internet-of-things",
+    "blockchain",
+  ];
+
+  const allGalleryImages = [
+    {
+      src: "/gallery/taha-suit-g3.jpg",
+      alt: "Taha",
+      title: t("images.advanced"),
+      category: t("categories.team"),
+    },
+    {
+      src: "/gallery/mahdi-suit-g2.jpg",
+      alt: "Mahdi",
+      title: t("images.collaborative"),
+      category: t("categories.team"),
+    },
+    {
+      src: "/gallery/assel-mahdi-g1.jpg",
+      alt: "Aseel And Mahdi",
+      title: t("images.workshop"),
+      category: t("categories.conference"),
+    },
+  ];
 
   const filteredImages =
-    selectedCategory === "All"
+    selectedCategory === "all"
       ? allGalleryImages
-      : allGalleryImages.filter((image) => image.category === selectedCategory);
+      : allGalleryImages.filter(
+          (image) => image.category === t(`categories.${selectedCategory}`)
+        );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-500/10 via-violet-500/5">
-      {/* Header */}
-
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5" />
         <div className="container mx-auto px-4 relative z-10">
+          {/* Header */}
+          <h2 className="text-3xl font-bold mb-4">{t("title")}</h2>
+          <p className="text-muted-foreground mb-12">{t("description")}</p>
+
           {/* Category Filter */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -72,7 +78,7 @@ export default function GalleryPage() {
                     : "bg-transparent border-border hover:bg-primary/10 hover:border-primary/50"
                 }`}
               >
-                {category}
+                {t(`categories.${category}`)}
               </Button>
             ))}
           </motion.div>

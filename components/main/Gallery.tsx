@@ -1,23 +1,25 @@
 "use client";
 import { motion } from "framer-motion";
 import { ModernGallery } from "../modern-gallery";
+import { useTranslations } from "next-intl";
 
 function Gallery() {
+  const t = useTranslations("gallery");
   const galleryImages = [
     {
       src: "/gallery/assel-mahdi-g1.jpg",
       alt: "Aseel And Mahdi",
-      title: "Workshop",
+      title: t("images.workshop"),
     },
     {
       src: "/gallery/mahdi-suit-g2.jpg",
       alt: "Mahdi",
-      title: "Collaborative Innovation",
+      title: t("images.collaborative"),
     },
     {
       src: "/gallery/taha-suit-g3.jpg",
       alt: "Taha",
-      title: "Advanced Analytics",
+      title: t("images.advanced"),
     },
   ];
 
@@ -34,12 +36,10 @@ function Gallery() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Our Work Gallery
+              {t("title")}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Explore our innovative projects and cutting-edge solutions that
-              showcase our expertise in AI, technology, and digital
-              transformation.
+              {t("description")}
             </p>
           </motion.div>
 

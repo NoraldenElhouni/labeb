@@ -3,10 +3,11 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Expand } from "lucide-react";
+import { ArrowRight, ArrowLeft, Expand } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Lightbox } from "@/components/ui/lightbox";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 interface GalleryImage {
   src: string;
@@ -26,6 +27,7 @@ export function ModernGallery({
   showViewMore = true,
   maxImages,
 }: ModernGalleryProps) {
+  const t = useTranslations("gallery");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -106,8 +108,8 @@ export function ModernGallery({
               size="lg"
               className="bg-transparent border-border hover:bg-primary/10 hover:border-primary/50 text-foreground hover:text-primary"
             >
-              View Full Gallery
-              <ArrowRight className="ml-2 h-4 w-4" />
+              {t("button")}
+              <ArrowLeft className="ml-2 h-4 w-4" />
             </Button>
           </Link>
         </motion.div>

@@ -2,34 +2,32 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
 import { Award } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 function Achievements() {
+  const t = useTranslations("achievements");
   const achievements = [
     {
-      title: "ISO 27001 Certification",
-      description:
-        "Information Security Management System certification ensuring data protection standards.",
+      title: t("list.project1.title"),
+      description: t("list.project1.description"),
       year: "2024",
       image: "/Certification.png",
     },
     {
-      title: "AI Ethics Compliance",
-      description:
-        "Certified for ethical AI development and deployment practices.",
+      title: t("list.project2.title"),
+      description: t("list.project2.description"),
       year: "2024",
       image: "/Certification.png",
     },
     {
-      title: "Digital Transformation Excellence",
-      description:
-        "Recognition for outstanding digital transformation consulting services.",
+      title: t("list.project3.title"),
+      description: t("list.project3.description"),
       year: "2023",
       image: "/Certification.png",
     },
     {
-      title: "Innovation Award",
-      description:
-        "Awarded for innovative satellite monitoring solutions in the oil & gas sector.",
+      title: t("list.project4.title"),
+      description: t("list.project4.description"),
       year: "2023",
       image: "/Certification.png",
     },
@@ -45,12 +43,9 @@ function Achievements() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Achievements We&apos;re Proud Of
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t("title")}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Recognition and certifications that validate our commitment to
-            excellence
+            {t("description")}
           </p>
         </motion.div>
 

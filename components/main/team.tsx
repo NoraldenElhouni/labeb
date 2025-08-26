@@ -2,23 +2,29 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
+
 function Team() {
   const t = useTranslations("team");
+
   const teamMembers = [
     {
       name: t("members.assel"),
       position: "Co-founder and CEO",
       image: "/team/Assel-melad.jpg",
+      link: "https://www.linkedin.com/in/assel",
     },
     {
       name: t("members.mahdi"),
       position: "Co-founder and CTO",
       image: "/team/mahdi.jpg",
+      // ❌ no link
     },
     {
       name: t("members.taha"),
       position: "Communication",
       image: "/team/Taha-mohammed.jpg",
+      link: "/team/taha",
     },
     {
       name: t("members.aysha"),
@@ -34,6 +40,7 @@ function Team() {
       name: t("members.noralden"),
       position: "Web Developer",
       image: "/team/Noralden-alhouni.jpg",
+      link: "/team/noralden",
     },
   ];
 
@@ -53,15 +60,9 @@ function Team() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.map((member, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          {teamMembers.map((member, index) => {
+            const CardContentBlock = (
               <Card className="h-full bg-card/50 backdrop-blur-sm border-white/10 hover:bg-card/80 transition-all duration-300 text-center">
                 <CardContent>
                   <div className="mb-4">
@@ -78,8 +79,24 @@ function Team() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
-          ))}
+            );
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                {member.link ? (
+                  <Link href={member.link}>{CardContentBlock}</Link>
+                ) : (
+                  CardContentBlock
+                )}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

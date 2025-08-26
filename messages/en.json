@@ -72,6 +72,52 @@
       "noralden": "Noralden Alhouni"
     }
   },
+  "gallery": {
+    "title": "Our Work Gallery",
+    "description": "Explore our innovative projects and cutting-edge solutions that showcase our expertise in AI, technology, and digital transformation.",
+    "categories": {
+      "all": "All",
+      "team": "Team",
+      "conference": "Conference",
+      "app-development": "App Development",
+      "machine-learning": "Machine Learning",
+      "cybersecurity": "Cybersecurity",
+      "internet-of-things": "Internet of Things",
+      "blockchain": "Blockchain"
+    },
+    "images": {
+      "workshop": "Workshop",
+      "collaborative": "Collaborative Innovation",
+      "advanced": "Advanced Analytics"
+    },
+    "button": "View Full Gallery"
+  },
+  "achievements": {
+    "title": "Achievements We're Proud Of",
+    "description": "Recognition and certifications that validate our commitment to excellence",
+    "list": {
+      "project1": {
+        "title": "Project 1",
+        "description": "Brief description of Project 1."
+      },
+      "project2": {
+        "title": "Project 2",
+        "description": "Brief description of Project 2."
+      },
+      "project3": {
+        "title": "Project 3",
+        "description": "Brief description of Project 3."
+      },
+      "project4": {
+        "title": "Project 4",
+        "description": "Brief description of Project 4."
+      }
+    }
+  },
+  "partners": {
+    "title": "Success Partners",
+    "description": "Trusted by leading organizations and supported by prestigious institutions."
+  },
   "footer": {
     "name": "LABEB AI",
     "description": "Libyan tech startup specializing in smart solutions powered by artificial intelligence for secure digital transformation.",

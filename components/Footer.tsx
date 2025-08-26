@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { Linkedin, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   const t = useTranslations("footer");
@@ -29,6 +29,15 @@ const Footer = () => {
               </Button>
               <Button variant="outline" size="sm" asChild>
                 <Link
+                  href="https://www.linkedin.com/company/labebai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button variant="outline" size="sm" asChild>
+                <Link
                   href="https://wa.me/218917722558"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -38,11 +47,20 @@ const Footer = () => {
               </Button>
               <Button variant="outline" size="sm" asChild>
                 <Link
-                  href="https://www.linkedin.com/in/yourprofile/"
+                  href="https://www.instagram.com/labeb.ai?igsh=MTdvaTV0bWpkcjd2bQ%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Linkedin className="h-4 w-4" />
+                  <FaInstagram className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button variant="outline" size="sm" asChild>
+                <Link
+                  href="https://www.facebook.com/share/1Ce915Mf7H/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebook className="h-4 w-4" />
                 </Link>
               </Button>
             </div>
