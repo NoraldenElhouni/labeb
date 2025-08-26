@@ -1,14 +1,16 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "../ui/button";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, PlayCircle } from "lucide-react";
 import { Particles } from "../magicui/particles";
 import LogoIconCloud from "../animation/LogoIconCloud";
+import { useLocale, useTranslations } from "next-intl";
 
 function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
-  // const t = useTranslations("home");
+  const dir = useLocale() === "ar" ? "rtl" : "ltr";
+  const t = useTranslations("hero");
 
   return (
     <section
@@ -61,9 +63,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="mx-auto max-w-3xl text-pretty text-base sm:text-xl text-muted-foreground leading-relaxed"
           >
-            LABEB AI is a Libyan tech startup enabling organizations to achieve
-            secure and efficient digital transformation while ensuring data
-            privacy protection.
+            {t("description")}
           </motion.p>
 
           {/* CTA buttons */}
@@ -84,8 +84,12 @@ function Hero() {
                          bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500
                          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
             >
-              <span className="mr-2">Get started</span>
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+              <span className="mr-2">{t("buttons.get_started")}</span>
+              {dir === "ltr" ? (
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+              ) : (
+                <ArrowLeft className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+              )}
             </Button>
 
             <Button
@@ -101,7 +105,7 @@ function Hero() {
                          focus-visible:ring-offset-2 focus-visible:ring-violet-500"
             >
               <PlayCircle className="mr-2 h-5 w-5" />
-              Our services
+              {t("buttons.our_services")}
             </Button>
             <Button
               size="lg"
@@ -116,7 +120,7 @@ function Hero() {
                          focus-visible:ring-offset-2 focus-visible:ring-violet-500"
             >
               <PlayCircle className="mr-2 h-5 w-5" />
-              Our team
+              {t("buttons.our_team")}
             </Button>
             <Button
               size="lg"
@@ -130,8 +134,17 @@ function Hero() {
                          hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2
                          focus-visible:ring-offset-2 focus-visible:ring-violet-500"
             >
-              <PlayCircle className="mr-2 h-5 w-5" />
-              Contact us
+              {dir === "ltr" ? (
+                <>
+                  <PlayCircle className="mr-2 h-5 w-5" />
+                  {t("buttons.contact_us")}
+                </>
+              ) : (
+                <>
+                  {t("buttons.contact_us")}
+                  <PlayCircle className="mr-2 h-5 w-5" />
+                </>
+              )}
             </Button>
           </motion.div>
         </div>

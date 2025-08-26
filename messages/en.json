@@ -1,7 +1,12 @@
 {
-  "home": {
-    "title": "Welcome to Labeb",
-    "description": "Your ultimate platform for managing and sharing your favorite books."
+  "hero": {
+    "description": "LABEB AI is a Libyan tech startup enabling organizations to achieve secure and efficient digital transformation while ensuring data privacy protection.",
+    "buttons": {
+      "get_started": "Get Started",
+      "our_services": "Our Services",
+      "our_team": "Our Team",
+      "contact_us": "Contact Us"
+    }
   },
   "team": {
     "title": "Meet Our Team",
