@@ -135,9 +135,9 @@ export default function LogoIconCloud() {
         </div>
       ))}
 
-      {/* Center Logo */}
+      {/* Center Logo - Removed border but kept all blur effects */}
       <motion.div
-        className="relative z-50 flex items-center justify-center cursor-pointer"
+        className="relative z-50 flex items-center justify-center cursor-pointer -translate-y-2"
         initial={{ scale: 0, opacity: 0, rotate: -180 }}
         animate={{ scale: 1, opacity: 1, rotate: 0 }}
         transition={{
@@ -157,30 +157,18 @@ export default function LogoIconCloud() {
         whileTap={{ scale: 0.95 }}
       >
         {/* Enhanced outer glow with blur background */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/30 to-violet-500/30 blur-3xl animate-pulse" />
 
-        {/* Additional blur layer for better background effect */}
-        <div className="absolute inset-0 rounded-full bg-white/30 dark:bg-background/30 blur-2xl" />
-
-        {/* Main container with enhanced blur */}
-        <div className="relative p-6 rounded-full bg-white/30 dark:bg-background/20 backdrop-blur-xl border border-gray-200/30 dark:border-white/20 shadow-2xl">
-          {/* Inner glow */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/10 to-violet-500/10" />
-
-          {/* Additional inner blur layer */}
-          <div className="absolute inset-0 rounded-full bg-white/20 dark:bg-background/10 backdrop-blur-sm" />
-
-          {/* Logo */}
-          <div className="relative">
-            <Image
-              src="/logo/logo.png"
-              alt="LABEB AI Logo"
-              width={88}
-              height={88}
-              className="relative z-10 drop-shadow-lg"
-              priority
-            />
-          </div>
+        {/* Logo container - removed border and background, keeping only padding for spacing */}
+        <div className="relative p-6 mb-2">
+          {/* Logo - now truly floating with blur effects only */}
+          <Image
+            src="/logo/logo.png"
+            alt="LABEB AI Logo"
+            width={130}
+            height={130}
+            className="relative z-10 drop-shadow-lg"
+            priority
+          />
         </div>
       </motion.div>
 

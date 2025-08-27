@@ -34,7 +34,7 @@ function SuccessPartners() {
   const marqueeItems = [...partners, ...partners];
 
   return (
-    <section id="partners" className="py-24 bg-muted/30">
+    <section id="partners" dir="ltr" className="py-24 bg-muted/30">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2

@@ -11,34 +11,34 @@ function Team() {
     {
       name: t("members.assel"),
       position: "Co-founder and CEO",
-      image: "/team/Assel-melad.jpg",
+      image: "/team/Assel-Melad.svg",
       link: "https://www.linkedin.com/in/assel-melad/",
     },
     {
       name: t("members.mahdi"),
       position: "Co-founder and CTO",
-      image: "/team/mahdi.jpg",
+      image: "/team/Mahdi-Alagab.svg",
       link: "https://www.linkedin.com/in/mahdi-alagab/",
     },
     {
       name: t("members.taha"),
       position: "Communication",
-      image: "/team/Taha-mohammed.jpg",
+      image: "/team/Taha-Mohammed.svg",
     },
     {
       name: t("members.aysha"),
       position: "Coordinator of training",
-      image: "/team/Aysha-ehmeeid.jpg",
+      image: "/team/Aysha-Ehmeeid.svg",
     },
     {
       name: t("members.suhair"),
       position: "UI/UX Designer",
-      image: "/team/Suhair-ali.jpg",
+      image: "/team/Suhair-Ali.svg",
     },
     {
       name: t("members.noralden"),
       position: "Web Developer",
-      image: "/team/Noralden-alhouni.jpg",
+      image: "/team/Noralden-Alhouni.svg",
       link: "https://www.linkedin.com/in/nouralden-alhouni-515488212/",
     },
   ];
