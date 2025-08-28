@@ -74,7 +74,7 @@ function SuccessPartners() {
             {marqueeItems.map((partner, index) => (
               <div
                 key={`${partner.name}-${index}`}
-                className="flex-shrink-0 bg-card/30 backdrop-blur-sm rounded-lg px-8 py-4 min-w-[200px] flex items-center justify-center"
+                className="flex-shrink-0 backdrop-blur-sm rounded-lg px-8 py-4 min-w-[200px] flex items-center justify-center"
                 title={partner.name}
               >
                 {partner.logo ? (

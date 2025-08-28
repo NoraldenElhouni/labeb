@@ -24,6 +24,7 @@ function Team() {
       name: t("members.taha"),
       position: "Communication",
       image: "/team/Taha-Mohammed.svg",
+      link: "https://www.linkedin.com/in/%D8%B7%D9%87-%D8%A7%D9%84%D9%87%D9%88%D9%86%D9%8A-021a632b8/",
     },
     {
       name: t("members.aysha"),
